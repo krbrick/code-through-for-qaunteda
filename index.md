@@ -153,7 +153,7 @@ tok.dfm.trim <- dfm_trim(this.tok.in.dfm, min_docfreq = 0.075, max_docfreq = 0.9
 dfm2stm <- convert(tok.dfm.trim, to = "stm")
 model.stm <- stm(dfm2stm$documents, dfm2stm$vocab, K = topic.count, data = dfm2stm$meta, init.type = "Spectral")
 ```
-To keep from boring us all to tears, I'll keep my topic numbers and table outputs low. Useful visualizations including plotting the topics, which shows how they relate to their docs and each other and comparisons between topics, in the 'perspectives' plot. 
+To keep from boring us all to tears, I'll keep my topic numbers and table outputs low. Useful visualizations including plotting the topics (Top Topics), which shows how they relate to their docs and each other and comparisons between topics, as in the 'perspectives' plot. 
 
 ```{r, fig.margin = TRUE}
 data.frame(t(labelTopics(model.stm, n = 1)$prob))
